@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <title>JavaScript in the Web</title>
+    <style>
+        html {
+            font-size: 150%;
+        }
+        
+        body,
+        button,
+        input {
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        body {
+            margin: 80px 160px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">JavaScript in the Web</h1>
+
+    <button name="button" onclick="toggleVisibilty()">Toggle Button</button>
+
+
+
+    <script type="text/javascript">
+        let heading = document.getElementById('heading')
+        console.log(heading)
+
+
+        function toggleVisibilty() {
+            console.log('toggle')
+
+            if (heading.style.visibility === 'hidden') {
+                heading.style.visibility = 'visible';
+                return;
+            }
+            heading.style.visibility = 'hidden';
+        }
+    </script>
+
+</body>
+
+</html>

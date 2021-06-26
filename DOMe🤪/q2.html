@@ -1,0 +1,81 @@
+<!--
+@author Juveria-Manzar
+@email juveriamanzar29@gmail.com
+@create date 2020-03-23 11:14:50
+@desc Array of elements:array like
+forEach() does'nt work on array like
+Array-Like to Array:from()
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+    <title>JavaScript in the Web</title>
+    <style>
+        html {
+            font-size: 150%;
+        }
+        
+        body,
+        button,
+        input {
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        body {
+            margin: 80px 160px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="heading">JavaScript in the Web</h1>
+    <h1 class="heading">JavaScript in the Web</h1>
+    <h1 class="heading">JavaScript in the Web</h1>
+    <h1 class="heading">JavaScript in the Web</h1>
+    <h1 class="heading">JavaScript in the Web</h1>
+
+    <button name="button" onclick="toggleVisibility()">Toggle Button</button>
+
+
+
+    <script type="text/javascript">
+        let headings = document.getElementsByClassName('heading')
+        console.log(headings)
+        headings = Array.from(headings)
+        console.log(headings)
+        let isVisible = true;
+
+
+        // function toggleVisibilty() {
+        //     isVisible = !isVisible;
+
+        //     let visibility = isVisible ? 'visible' : 'hidden'
+
+        //     /*forEach() doesnt iterate array-like*/
+        //     // headings.forEach((element, i) => {
+        //     //     console.log(element, i)
+        //     // });
+
+        //     // for (let i = 0; i < headings.length; i++) {
+        //     //     headings[i].style.visibility = visibility;
+        //     // }
+        // }
+
+        function toggleVisibility() {
+            isVisible = !isVisible;
+
+            let visibility = isVisible ? 'visible' : 'hidden'
+            headings.forEach((elem, i) => {
+                elem.style.visibility = visibility
+            })
+        }
+    </script>
+
+</body>
+
+</html>

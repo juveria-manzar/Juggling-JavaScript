@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid;
+        }
+
+        .red {
+            padding: 2rem;
+            height: 20rem;
+            width: 20rem;
+            background-color: red;
+        }
+
+        .yellow {
+            height: 10rem;
+            width: 10rem;
+            margin: auto;
+            background-color: yellow;
+            margin-top: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red">
+        <div class="yellow"></div>
+    </div>
+    <script>
+
+        //Event Bubbling
+        //method of event propagation in the HTML DOM API when an event is in an element 
+        //inside another element, and both elements have registered a handle to that event. 
+        //It is a process that starts with the element that triggered the event and then bubbles 
+        //up to the containing elements in the hierarchy.
+
+        //Q The following code is broken. 
+        //Even when clicked on yellow, 
+        //its alerted that red is clicked. Fix it
+        let red = document.querySelector(".red");
+        let yellow = document.querySelector(".yellow");
+
+        red.addEventListener("click", function (e) {
+            alert("red was clicked");
+        });
+
+        yellow.addEventListener("click", function (e) {
+            alert("yellow was clicked");
+            e.stopPropagation();//bubbling stopped
+        });
+
+
+    </script>
+</body>
+
+</html>
